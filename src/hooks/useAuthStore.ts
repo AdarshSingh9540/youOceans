@@ -37,8 +37,8 @@ export const useAuthStore = create<
     const user = sessionStorage.getItem("user");
     console.log(token, user);
 
-    if (token || user!) {
-      set({ user: JSON.parse(user), isAuthenticated: true });
+    if (token || user) {
+      set({ user: JSON.parse(user!), isAuthenticated: true });
     } else {
       set({ user: null, isAuthenticated: false });
     }
